@@ -8,12 +8,15 @@ from os.path import isdir
 def do_pack():
     """ creates a .tgz archive """
     dt = datetime.utcnow()
-    file_name = f"versions/web_static_{dt.year}{dt.month}{dt.day}{dt.hour}"
+    file_name = "versions/web_static_{}{}{}{}.tgz".format(dt.year,
+                                                          dt.month,
+                                                          dt.day,
+                                                          dt.hour)
     if isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
 
-    if local(f"tar -czvf {file_name} web_static").failed is True:
+    if local("tar -czvf {} web_static".format(file_name)).failed is True:
         return None
     else:
         return file_name
