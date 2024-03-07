@@ -9,11 +9,11 @@ def do_pack():
     """ creates a .tgz archive """
     dt = datetime.utcnow()
     file_name = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
-                                                          dt.month,
-                                                          dt.day,
-                                                          dt.hour,
-                                                          dt.minute,
-                                                          dt.second)
+                                                              dt.month,
+                                                              dt.day,
+                                                              dt.hour,
+                                                              dt.minute,
+                                                              dt.second)
     if isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
