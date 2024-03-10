@@ -9,7 +9,7 @@ remote_hosts = ['34.203.29.40', '54.164.120.187']
 def do_deploy(c, archive_path):
     """
     Distributes an archive to a web server
-    
+
     Args:
         archive_path (str): The path of the archive to distribute.
     returns:
