@@ -7,6 +7,7 @@ env.hosts = ['34.203.29.40', '54.164.120.187']
 env.user = "ubuntu"
 env.key_filename = "~/.ssh/id_rsa"
 
+
 def do_pack():
     """ creates a .tgz archive """
     dt = datetime.utcnow()
