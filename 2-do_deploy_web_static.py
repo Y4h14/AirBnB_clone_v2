@@ -15,8 +15,8 @@ def do_deploy(archive_path):
         if os.path.isfile(archive_path) is False:
             return False
         dir_path = "/data/web_static/releases/"
-        filename = path.basename(archive_path)
-        file_no_ext, ext = path.splitext(filename)
+        filename = os.path.basename(archive_path)
+        file_no_ext, ext = os.path.splitext(filename)
         put(archive_path, "/tmp/{}".format(filename))
         run("rm -rf {}{}".format(dir_path, file_no_ext))
         run("mkdir -p {}{}".format(dir_path, file_no_ext))
