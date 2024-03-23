@@ -71,3 +71,7 @@ class FileStorage:
             class_name = obj.__class__.__name__
             del FileStorage.__objects["{}.{}".format(class_name, obj.id)]
             self.save()
+
+    def close(self):
+        """deserialize JSON objects"""
+        self.reload()
