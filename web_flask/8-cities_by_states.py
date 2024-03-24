@@ -21,9 +21,8 @@ def appcontext_treatdown(exc=None):
 def state_list():
     """return all states data"""
     states = storage.all("State")
-    cities = storage.all("City")
     return render_template('8-cities_by_states.html',
-                           states=states, cities=cities)
+                           states=states)
 
 
 if __name__ == '__main__':
