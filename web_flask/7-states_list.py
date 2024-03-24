@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def appcontext_treatdown():
+def appcontext_treatdown(exc=None):
     """
     this functions runs after each request regardless of weather
     an exception was raised or not.
@@ -20,9 +20,10 @@ def appcontext_treatdown():
 @app.route('/states_list', strict_slashes=False)
 def state_list():
     """return all states data"""
+    print(storage.all("State"))
     return render_template('7-states_list.html',
-                           result=storage.all(State))
+                           result=storage.all("State"))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
