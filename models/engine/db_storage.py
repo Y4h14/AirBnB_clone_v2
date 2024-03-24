@@ -58,10 +58,6 @@ class DBStorage:
         """commit all changes of the current db session"""
         self.__session.commit()
 
-    def close(self):
-        """Closes the current DBStorage session"""
-        self.__session.close()
-        # self.__session.remove()
 
     def delete(self, obj=None):
         """delete form the current database session"""
@@ -78,3 +74,8 @@ class DBStorage:
             self.__session = Session()
         except Exception as E:
             print(E)
+
+    def close(self):
+        """Closes the current DBStorage session"""
+        self.__session.close()
+        # self.__session.remove()

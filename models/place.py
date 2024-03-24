@@ -9,9 +9,11 @@ from sqlalchemy import Table
 from sqlalchemy.orm import relationship
 
 place_amenity = Table('place_amenity', Base.metadata,
-                      Column('place_id', ForeignKey('places.id'),
+                      Column('place_id', ForeignKey('places.id',
+                                                    ondelete='CASCADE'),
                              primary_key=True, nullable=False),
-                      Column('amenity_id', ForeignKey('amenities.id'),
+                      Column('amenity_id', ForeignKey('amenities.id',
+                                                      ondelete='CASCADE'),
                              primary_key=True, nullable=False))
 
 
