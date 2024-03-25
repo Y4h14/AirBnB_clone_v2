@@ -26,7 +26,7 @@ def state_list():
 
 
 @app.route('/states/<id>', strict_slashes=False)
-def state_list():
+def state_id(id):
     """return all states data"""
     states = storage.all("State")
     state = states.get(f"State.{id}")
